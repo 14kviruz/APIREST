@@ -16,8 +16,14 @@ if (count(array_filter($array)) == 1) {
 cuando si se hace peticion a la API
 ======================================= */
     if (count(array_filter($array)) == 2) {
-        $json = array(
-            "Detalle" => "Con Solicitudes",
-        );
+       //cursos
+       if(array_filter($array)[2]=="cursos"){
+
+        //ver lista de cursos
+        if(isset($_SERVER["REQUEST_METHOD"]) && $_SERVER["REQUEST_METHOD"]=="GET"){
+            $cursos= new controladorCursos();
+            $cursos->index();
+        }
+       }
     }
 }
