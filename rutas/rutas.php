@@ -17,7 +17,7 @@ cuando si se hace peticion a la API
 ======================================= */
     if (count(array_filter($array)) == 2) {
        //cursos
-       if(array_filter($array)[3]=="cursos"){
+       if(array_filter($array)[2]=="cursos"){
 
         //ver lista de cursos
         if(isset($_SERVER["REQUEST_METHOD"]) && $_SERVER["REQUEST_METHOD"]=="GET"){
