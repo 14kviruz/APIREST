@@ -6,10 +6,10 @@ class controladorCursos{
         // validar cliente
 
         $clientes= ModeloCliente::index("clientes");
-        if(isset($_SERVER["PH_AUTH_USER"]) && isset($_SERVER["PH_AUTH_PW"])){
+        if(isset($_SERVER["PHP_AUTH_USER"]) && isset($_SERVER["PHP_AUTH_PW"])){
             foreach($clientes as $key=> $valueCliente){
 
-                if($_SERVER["PH_AUTH_USER"].":".$_SERVER["PH_AUTH_PW"]== $valueCliente["id_cliente"].":".$valueCliente["llave_secreta"] ){
+                if($_SERVER["PHP_AUTH_USER"].":".$_SERVER["PHP_AUTH_PW"]== $valueCliente["id_cliente"].":".$valueCliente["llave_secreta"] ){
 
 
                     $cursos= ModeloCursos::index("cursos");
